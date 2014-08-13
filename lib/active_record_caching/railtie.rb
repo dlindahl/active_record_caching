@@ -5,7 +5,12 @@ module ActiveRecordCaching
         if ActiveRecord::Base.respond_to? :cache_key
           raise CacheKeyExists
         else
-          require 'active_record_caching/active_record'
+          case Rails.version[0]
+          when '3' then ActiveRecord::Base.extend(ActiveRecordCaching::CacheKey::Rails3)
+          when '4' then ActiveRecord::Base.extend(ActiveRecordCaching::CacheKey::Rails4)
+          else
+            raise 'unsupported'
+          end
         end
       end
 
