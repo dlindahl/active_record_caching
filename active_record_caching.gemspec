@@ -5,7 +5,7 @@ require 'active_record_caching/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'active_record_caching'
-  spec.version       = active_record_caching::VERSION
+  spec.version       = ActiveRecordCaching::VERSION
   spec.authors       = ['Derek Lindahl']
   spec.email         = ['dlindahl@customink.com']
   spec.summary       = %q{TODO: Write a short summary. Required.}
