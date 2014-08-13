@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ActiveRecordCaching::VERSION
   spec.authors       = ['Derek Lindahl']
   spec.email         = ['dlindahl@customink.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Additonal caching logic for ActiveRecord for fast JSON APIs}
+  spec.description   = spec.summary
   spec.homepage      = 'https://github.com/dlindahl/active_record_caching'
   spec.license       = 'MIT'
 

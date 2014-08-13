@@ -1,6 +1,7 @@
 # ActiveRecord Caching
 
-
+Adds "Advanced Caching" to ActiveRecord::Base as described in Adam Hawkins'
+blog, [Fast JSON APIs](http://broadcastingadam.com/2012/07/advanced_caching_part_6-fast_json_apis/).
 
 ## Installation
 
@@ -18,7 +19,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Index controller actions will support `#stale?`
+
+```ruby
+class ResourceController < ApplicationController
+  responds_to :json
+
+  def index
+    # uses the new #cache_key method defined on ActiveRecord::Base to
+    # set the etag
+    if stale? collection do
+      # Use cached JSON from individual hashes to render a collection
+      respond_with collection
+    end
+  end
+end
+```
 
 ## Contributing
 
